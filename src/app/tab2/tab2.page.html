@@ -9,9 +9,45 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Añadir ejercicio</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-text>
+    <h2>Nuevo ejercicio</h2>
+    <p>Introduce los datos del ejercicio que quieres añadir a tu rutina.</p>
+  </ion-text>
+
+  <ion-list>
+    <ion-item>
+      <ion-input
+        placeholder="Nombre del ejercicio"
+        labelPlacement = "stacked"
+        type="text"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        placeholder="Número de repeticiones"
+        labelPlacement = "stacked"
+        type="number"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label = "Imagen"
+        LabelPlacement = "stacked"
+        type="text"
+        disabled = "true"
+        >
+      </ion-input>
+    </ion-item>
+  </ion-list>
+  
+  <ion-button expand="block" color="primary">
+    Añadir ejercicio
+  </ion-button>
+
+  <app-explore-container name="Añadir ejercicio"></app-explore-container>
 </ion-content>

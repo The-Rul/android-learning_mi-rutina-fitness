@@ -1,17 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Configuración
-    </ion-title>
+    <ion-title>Configuración</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Configuración</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-text>
+    <h2>Configuración</h2>
+    <p>Cambio nombre y tema oscuro</p>
+  </ion-text>
+
+  <ion-list>
+    <ion-item>
+      <ion-input
+        label="Nombre de usuario"
+        labelPlacement="stacked"
+        placeholder="Introduce tu nombre"
+        type="text">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-toggle justify="space-between">
+        Tema oscuro
+      </ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block">
+    Guardar configuración
+  </ion-button>
 </ion-content>
