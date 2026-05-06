@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'android-learning_mi-rutina-fitness',
+  appId: 'com.campusdigitalfp.mirutinafitness',
+  appName: 'Mi Rutina Fitness',
   webDir: 'www'
 };
 
