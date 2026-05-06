@@ -13,7 +13,6 @@
 
   <ion-text>
     <h2>Configuración</h2>
-    <p>Cambio nombre y tema oscuro</p>
   </ion-text>
 
   <ion-list>
@@ -22,18 +21,25 @@
         label="Nombre de usuario"
         labelPlacement="stacked"
         placeholder="Introduce tu nombre"
-        type="text">
+        type="text"
+        [(ngModel)]="nombreUsuario"
+        name="nombreUsuario">
       </ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-toggle justify="space-between">
+      <ion-toggle justify="space-between"
+                  [checked]="temaOscuro"
+                  (ionChange)="cambiarTema($event)">
         Tema oscuro
       </ion-toggle>
     </ion-item>
   </ion-list>
 
-  <ion-button expand="block">
+  <ion-button expand="block" (click)="guardarConfiguracion()">
     Guardar configuración
   </ion-button>
+    <ion-text color="medium" *ngIf="mensaje">
+    <p>{{ mensaje }}</p>
+  </ion-text>
 </ion-content>

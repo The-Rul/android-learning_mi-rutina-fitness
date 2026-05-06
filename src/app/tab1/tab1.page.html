@@ -1,49 +1,49 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Rutinas
-    </ion-title>
+    <ion-title>Rutinas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Rutinas</ion-title>
     </ion-toolbar>
   </ion-header>
+
   <ion-text>
-    <h2>Gestiona tus rutinas de ejercicio</h2>
-    <p> Lista de ejercicios registrados en la rutina.</p>
+    <h2>Mis ejercicios</h2>
+    <p>Lista de ejercicios registrados en la rutina.</p>
   </ion-text>
 
-  <ion-list>
-    
-    <ion-item>
-      <ion-checkbox slot="start"></ion-checkbox>
+  <ion-list *ngIf="ejercicios.length > 0; else sinEjercicios">
+    <ion-item *ngFor="let ejercicio of ejercicios">
+      <ion-checkbox
+        slot="start"
+        [checked]="ejercicio.completado"
+        (ionChange)="cambiarEstado($event, ejercicio.id)">
+      </ion-checkbox>
+
       <ion-label>
-        <h3>Flexiones 1</h3>
-        <p>Repeticiones: 14</p>
+        <h3>{{ ejercicio.nombre }}</h3>
+        <p>Repeticiones: {{ ejercicio.repeticiones }}</p>
+        <p>
+          Estado:
+          {{ ejercicio.completado ? 'Realizado' : 'No realizado' }}
+        </p>
       </ion-label>
     </ion-item>
-
-     <ion-item>
-      <ion-checkbox slot="start"></ion-checkbox>
-      <ion-label>
-        <h3>Sentadillas</h3>
-        <p>Repeticiones: 20</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-checkbox slot="start"></ion-checkbox>
-      <ion-label>
-        <h3>Abdominales</h3>
-        <p>Repeticiones: 25</p>
-      </ion-label>
-    </ion-item>
-
   </ion-list>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ng-template #sinEjercicios>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>No hay ejercicios</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        Añade un ejercicio desde la pestaña "Añadir".
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
 </ion-content>

@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Añadir ejercicio
-    </ion-title>
+    <ion-title> Añadir ejercicio </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,41 +11,51 @@
     </ion-toolbar>
   </ion-header>
 
-    <ion-text>
+  <ion-text>
     <h2>Nuevo ejercicio</h2>
-    <p>Introduce los datos del ejercicio que quieres añadir a tu rutina.</p>
   </ion-text>
 
   <ion-list>
     <ion-item>
       <ion-input
         placeholder="Nombre del ejercicio"
-        labelPlacement = "stacked"
+        labelPlacement="stacked"
         type="text"
-      ></ion-input>
+        [(ngModel)]="nombre"
+        name="nombre"
+      >
+        ></ion-input
+      >
     </ion-item>
     <ion-item>
       <ion-input
         placeholder="Número de repeticiones"
-        labelPlacement = "stacked"
+        labelPlacement="stacked"
         type="number"
-      ></ion-input>
+        [(ngModel)]="repeticiones"
+        name="repeticiones"
+      >
+        ></ion-input
+      >
     </ion-item>
 
     <ion-item>
       <ion-input
-        label = "Imagen"
-        LabelPlacement = "stacked"
+        label="Imagen"
+        LabelPlacement="stacked"
         type="text"
-        disabled = "true"
-        >
+        disabled="true"
+      >
       </ion-input>
     </ion-item>
   </ion-list>
-  
-  <ion-button expand="block" color="primary">
+
+  <ion-button expand="block" color="primary" (click)="addEjercicio()">
     Añadir ejercicio
   </ion-button>
 
-  <app-explore-container name="Añadir ejercicio"></app-explore-container>
+  <ion-text color="medium" *ngIf="mensaje">
+    <p>{{ mensaje }}</p>
+  </ion-text>
+
 </ion-content>
