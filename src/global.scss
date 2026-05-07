@@ -195,8 +195,13 @@ ion-toggle {
 }
 
 ion-input {
-  --highlight-color-focused: var(--app-color-primary);
+  --highlight-color-: var(--app-color-secondary);
 }
+
+.ion-valid.sc-ion-input-md-h {
+    --highlight-color: #ffb703;
+}
+
 
 .app-section-title {
   margin-bottom: 18px;
