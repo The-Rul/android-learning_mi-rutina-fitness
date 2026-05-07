@@ -21,17 +21,25 @@
       <ion-checkbox
         slot="start"
         [checked]="ejercicio.completado"
-        (ionChange)="cambiarEstado($event, ejercicio.id)">
+        (ionChange)="cambiarEstado($event, ejercicio.id)"
+      >
       </ion-checkbox>
 
       <ion-label>
         <h3>{{ ejercicio.nombre }}</h3>
         <p>Repeticiones: {{ ejercicio.repeticiones }}</p>
-        <p>
-          Estado:
-          {{ ejercicio.completado ? 'Realizado' : 'No realizado' }}
-        </p>
+        <p>Estado: {{ ejercicio.completado ? 'Realizado' : 'No realizado' }}</p>
       </ion-label>
+
+      <ion-button
+        slot="end"
+        fill="clear"
+        color="primary"
+        (click)="eliminarEjercicio(ejercicio.id)"
+      >
+              <ion-icon aria-hidden="true" name="trash"></ion-icon>
+
+      </ion-button>
     </ion-item>
   </ion-list>
 

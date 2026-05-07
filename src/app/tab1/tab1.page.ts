@@ -41,6 +41,13 @@ export class Tab1Page implements OnInit {
     const completado = event.detail.checked;
     await this.rutinaService.cambiarEstadoEjercicio(id, completado);
   }
+  
+  async eliminarEjercicio(id: string): Promise<void> {
+    await this.rutinaService.eliminarEjercicio(id);
+  }
 
+  async eliminarTodosLosEjercicios(): Promise<void> {
+    await this.rutinaService.eliminarTodosLosEjercicios();
+  }
 
 }
