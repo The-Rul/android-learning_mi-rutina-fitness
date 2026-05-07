@@ -4,53 +4,45 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Añadir ejercicio</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-text>
+<ion-text class="app-section-title">
     <h2>Nuevo ejercicio</h2>
   </ion-text>
 
-  <ion-list>
+  <ion-list >
     <ion-item>
       <ion-input
         placeholder="Nombre del ejercicio"
-        labelPlacement="stacked"
         type="text"
         [(ngModel)]="nombre"
-        name="nombre"
-      >
-        ></ion-input
-      >
+        name="nombre">
+        </ion-input>
     </ion-item>
     <ion-item>
       <ion-input
         placeholder="Número de repeticiones"
-        labelPlacement="stacked"
         type="number"
         [(ngModel)]="repeticiones"
-        name="repeticiones"
-      >
-        ></ion-input
-      >
+        name="repeticiones">
+        </ion-input>
     </ion-item>
 
     <ion-item>
       <ion-input
-        label="Imagen"
-        LabelPlacement="stacked"
+        placeholder="Imagen"
         type="text"
-        disabled="true"
-      >
+        disabled="true">
       </ion-input>
     </ion-item>
   </ion-list>
 
-  <ion-button expand="block" color="primary" (click)="addEjercicio()">
+  <ion-button expand="block" (click)="addEjercicio()">
     Añadir ejercicio
   </ion-button>
 

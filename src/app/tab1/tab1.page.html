@@ -1,6 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Rutinas</ion-title>
+
+    <ion-buttons slot="end" *ngIf="ejercicios.length > 0">
+      <ion-button
+        color="secondary"
+        fill="accent"
+        (click)="eliminarTodosLosEjercicios()"
+      >
+        <ion-icon aria-hidden="true" name="trash"></ion-icon>
+        Eliminar todos
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -11,13 +22,17 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-text>
+  <ion-text class="app-section-title">
     <h2>Mis ejercicios</h2>
     <p>Lista de ejercicios registrados en la rutina.</p>
   </ion-text>
 
   <ion-list *ngIf="ejercicios.length > 0; else sinEjercicios">
-    <ion-item *ngFor="let ejercicio of ejercicios">
+    <ion-item
+      *ngFor="let ejercicio of ejercicios"
+      class="exercise-item"
+      [class.exercise-item-completed]="ejercicio.completado"
+    >
       <ion-checkbox
         slot="start"
         [checked]="ejercicio.completado"
@@ -34,17 +49,16 @@
       <ion-button
         slot="end"
         fill="clear"
-        color="primary"
+        color="secondary"
         (click)="eliminarEjercicio(ejercicio.id)"
       >
-              <ion-icon aria-hidden="true" name="trash"></ion-icon>
-
+        <ion-icon aria-hidden="true" name="trash"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>
 
   <ng-template #sinEjercicios>
-    <ion-card>
+    <ion-card class="app-empty-card">
       <ion-card-header>
         <ion-card-title>No hay ejercicios</ion-card-title>
       </ion-card-header>

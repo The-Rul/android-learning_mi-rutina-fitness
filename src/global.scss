@@ -35,3 +35,184 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/***************** Custom Global Styles ******************/
+@import "./theme/variables.scss";
+
+/* Tipografias*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Raleway:wght@400;500;600;700&display=swap');
+
+
+* {
+  font-family: var(--app-font-body);
+}
+
+body {
+  background: var(--app-color-background);
+  color: var(--app-color-text);
+}
+
+ion-content {
+  --background: var(--app-color-background);
+}
+
+ion-toolbar {
+  --background: var(--app-color-background);
+  --color: var(--app-color-primary);
+}
+
+ion-title {
+  font-family: var(--app-font-title);
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+ion-tab-bar {
+  --background: #ffffff;
+  --color: var(--app-color-muted);
+  --color-selected: var(--app-color-primary);
+  border-top: 2px solid rgba(27, 92, 112, 0.12);
+}
+
+ion-tab-button {
+  font-family: var(--app-font-body);
+  font-weight: 600;
+}
+
+ion-button {
+  --background: var(--app-color-accent);
+  --background-hover: #e0a102;
+  --background-activated: #e0a102;
+  --color: var(--app-color-primary);
+  --border-radius: 14px;
+
+  font-family: var(--app-font-body);
+  font-weight: 700;
+  text-transform: none;
+}
+
+ion-button[color='danger'] {
+  --background: #d9534f;
+  --color: #ffffff;
+}
+
+.list-md  {
+  background: transparent;
+  padding: 0;
+}
+
+ion-item {
+  --background: #ffffff;
+  --color: var(--app-color-text);
+  --border-color: transparent;
+  --inner-border-width: 0;
+
+  margin-bottom: 12px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(27, 92, 112, 0.08);
+  overflow: hidden;
+}
+
+ion-item::part(native) {
+  background: #ffffff;
+  border-radius: 16px;
+}
+
+.exercise-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.exercise-item::part(native) {
+  border-left: 8px solid var(--app-color-accent);
+}
+
+.exercise-item ion-label h3 {
+  color: var(--app-color-primary);
+  font-weight: 700;
+}
+
+.exercise-item ion-checkbox {
+  --checkbox-background-checked: var(--app-color-accent);
+  --border-color-checked: var(--app-color-primary);
+  --checkmark-color: var(--app-color-primary);
+}
+
+.exercise-item-completed::part(native) {
+  border-left-color: var(--app-color-primary);
+}
+
+.exercise-item-completed ion-label h3 {
+  text-decoration: line-through;
+}
+
+.exercise-item-completed ion-label p {
+  opacity: 0.75;
+}
+
+ion-card {
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(27, 92, 112, 0.12);
+}
+
+ion-card-title,
+h1,
+h2,
+h3 {
+  color: var(--app-color-primary);
+}
+
+h1,
+h2 {
+  font-family: var(--app-font-title);
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+}
+
+p {
+  color: var(--app-color-muted);
+  line-height: 1.5;
+}
+
+ion-checkbox {
+  --size: 20px;
+
+  /* Sin marcar */
+  --checkbox-background: var(--app-color-primary-light);
+  --border-color: var(--app-color-primary-soft);
+
+  /* Marcado */
+  --checkbox-background-checked: var(--app-color-accent-medium);
+  --border-color-checked: var(--app-color-accent-medium);
+  --checkmark-color: var(--app-color-primary);
+}
+
+
+
+ion-toggle {
+  --track-background-checked: rgba(27, 92, 112, 0.35);
+  --handle-background-checked: var(--app-color-primary);
+}
+
+ion-input {
+  --highlight-color-focused: var(--app-color-primary);
+}
+
+.app-section-title {
+  margin-bottom: 18px;
+}
+
+.app-section-title h2 {
+  margin-bottom: 4px;
+}
+
+.app-empty-card {
+  background: #ffffff;
+}
+
+.app-danger-button {
+  --background: transparent;
+  --color: #d9534f;
+  font-weight: 700;
+}
+
